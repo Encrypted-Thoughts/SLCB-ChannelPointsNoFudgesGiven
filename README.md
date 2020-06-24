@@ -8,7 +8,7 @@ This script was built for use with Streamlabs Chatbot.
 Follow instructions on how to install custom script packs at:
 https://github.com/StreamlabsSupport/Streamlabs-Chatbot/wiki/Prepare-&-Import-Scripts
 
-Click [Here](https://github.com/Encrypted-Thoughts/SLCB-ChannelPointsRandomGif/blob/master/ChannelPointsRandomGif.zip?raw=true) to download the script pack.
+Click [Here](https://github.com/Encrypted-Thoughts/SLCB-ChannelPointsNoFudgesGiven/blob/master/ChannelPointsNoFudges.zip?raw=true) to download the script pack.
 
 Once installed you will need to provide an oAuth token. You can get one by clicking the Get Token button in script settings.
 
