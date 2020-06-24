@@ -1,4 +1,4 @@
-# SLCB Channel Points No Fudges GIven
+# SLCB Channel Points No Fudges Given
 
 This script allows the user to trigger a timer and some sfx via a custom channel point reward.
 
