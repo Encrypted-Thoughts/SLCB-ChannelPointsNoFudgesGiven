@@ -28,8 +28,8 @@ Once installed you just need to add custom channel point rewards to your twitch 
 
 The script also adds a custom custom command for resetting the timer.
   
-  !fuckup - this resets the timer to the closest time interval that the countdown is set to run.
-  !fuckup {some value in seconds} - Adds the value in seconds to the timer. Value can be negative to remove time if necessary.
+!fuckup - this resets the timer to the closest time interval that the countdown is set to run.
+!fuckup {some value in seconds} - Adds the value in seconds to the timer. Value can be negative to remove time if necessary.
 
 ## Author
 
