@@ -25,6 +25,13 @@
 		"tooltip": "Set the amount of time in seconds to add to the timer.",
 		"group": ""
 	},
+	"ResetCommand": {
+		"type": "textbox",
+		"label": "Command Name for resetting timer on fuckup",
+		"value": "!FuckUp",
+		"tooltip": "Set the command name that can be used by moderator+ to reset timer to closest timer multiple when a mistake is made.",
+		"group": ""
+	},
 	"RedeemedSFXPath": {
 		"type": "textbox",
 		"value": "",

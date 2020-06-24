@@ -51,6 +51,7 @@ class Settings(object):
             self.TwitchRewardName = ""
             self.TwitchRewardActivationType = "Immediate"
             self.TimerLength = 60
+            self.ResetCommand = "!FuckUp"
             self.RedeemedSFXPath = ""
             self.RedeemedSFXVolume = 100
             self.RedeemedSFXDelay = 10
@@ -97,6 +98,21 @@ def Init():
 #   [Required] Execute Data / Process messages
 #---------------------------
 def Execute(data):
+
+    if data.IsChatMessage():
+        if ScriptSettings.ResetCommand.lower() in data.Message.lower():
+            if Parent.HasPermission(data.User,"Moderator",""):
+                length = ScriptSettings.TimerLength
+                type = "reset"
+                if data.GetParamCount() > 1:
+                    length = int(data.GetParam(1))
+                    type = "add"
+                payload = {
+                    "interval": length,
+                    "type": type
+                }
+                Parent.BroadcastWsEvent("EVENT_FUCKED_UP",json.dumps(payload, encoding='utf-8-sig'))
+
     return
 
 #---------------------------

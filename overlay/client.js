@@ -34,7 +34,8 @@ function connectWebsocket() {
             website: "twitch.tv/encryptedthoughts",
             api_key: API_Key,
             events: [
-                "EVENT_NO_FUDGES_REDEEMED"
+                "EVENT_NO_FUDGES_REDEEMED",
+                "EVENT_FUCKED_UP"
             ]
         };
 
@@ -58,6 +59,13 @@ function connectWebsocket() {
                 timer += data.seconds;
             else
                 StartTimer(data.seconds, $('#time'), data.finishedSFXPath, data.finishedSFXVolume);
+        }
+        else if (socketMessage.event === "EVENT_FUCKED_UP") {
+            data = JSON.parse(socketMessage.data);
+            if (data.type === "reset")
+                timer = timer - (timer % data.interval) + data.interval;
+            else
+                timer += data.interval
         }
     };
 
