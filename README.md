@@ -26,6 +26,11 @@ After that you should be able to add a new Browser source in OBS and point it to
 
 Once installed you just need to add custom channel point rewards to your twitch channel and then match the names of the reward to a Twitch Reward event in the script settings.
 
+The script also adds a custom custom command for resetting the timer.
+  
+  !fuckup - this resets the timer to the closest time interval that the countdown is set to run.
+  !fuckup {some value in seconds} - Adds the value in seconds to the timer. Value can be negative to remove time if necessary.
+
 ## Author
 
 EncryptedThoughts - [Twitch](https://www.twitch.tv/encryptedthoughts)
