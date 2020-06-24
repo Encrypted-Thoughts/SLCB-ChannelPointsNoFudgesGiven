@@ -1,0 +1,115 @@
+{
+	"output_file": "settings.json",
+	"TwitchRewardName": {
+		"type": "textbox",
+		"value": "",
+		"label": "Title of Twitch Reward",
+		"tooltip": "Specify the name of the Twitch Reward that will trigger this event when detected.",
+		"group": ""
+	},
+	"TwitchRewardActivationType": {
+		"type": "dropdown",
+		"label": "Activation Point",
+		"value": "Immediate",
+		"tooltip": "Set whether the reward should be triggered immediately on reward redemption by viewer, or when the reward is accepted/rejected from the reward queue. Note: twitch currently doesn't return a way to distinguish between Accept or Reject so Reject will still trigger the reward.",
+		"items": [
+			"Immediate",
+			"On Reward Queue Accept/Reject"
+		],
+		"group": ""
+	},
+	"TimerLength": {
+		"type": "numberbox",
+		"label": "Time in seconds for reward to add",
+		"value": 600,
+		"tooltip": "Set the amount of time in seconds to add to the timer.",
+		"group": ""
+	},
+	"RedeemedSFXPath": {
+		"type": "textbox",
+		"value": "",
+		"label": "Path to SFX file",
+		"tooltip": "Specify the path to the SFX effect to trigger.",
+		"group": "Reward Redeemed SFX"
+	},
+	"RedeemedSFXVolume": {
+		"type": "slider",
+		"label": "SFX Volume",
+		"value": 100,
+		"min": 0,
+		"max": 100,
+		"ticks": 1,
+		"tooltip": "Specify the volume to the SFX effect to trigger.",
+		"group": "Reward Redeemed SFX"
+	},
+	"RedeemedSFXDelay": {
+		"type": "numberbox",
+		"label": "SFX Delay in Seconds",
+		"value": 10,
+		"tooltip": "Specify the number of seconds to wait before attempting to play next SFX in queue after starting to play this SFX.",
+		"group": "Reward Redeemed SFX"
+	},
+	"FinishedSFXPath": {
+		"type": "textbox",
+		"value": "",
+		"label": "Path to SFX file",
+		"tooltip": "Specify the path to the SFX effect to trigger.",
+		"group": "Reward Finished SFX"
+	},
+	"FinishedSFXVolume": {
+		"type": "slider",
+		"label": "SFX Volume",
+		"value": 100,
+		"min": 0,
+		"max": 100,
+		"ticks": 1,
+		"tooltip": "Specify the volume to the SFX effect to trigger.",
+		"group": "Reward Finished SFX"
+	},
+	"TwitchAuthCode": {
+		"type": "textbox",
+		"value": "",
+		"label": "Twitch Auth Code",
+		"tooltip": "Enter an Auth Code that allows the bot to read channel point redemptions on the channel being watched.",
+		"group": "Twitch Auth Code - KEEP HIDDEN"
+	},
+	"btnGetToken": {
+		"type": "button",
+		"label": "Get Token",
+		"tooltip": "Generate an Auth Code for the watched twitch account with permissions to read channel point redemptions.",
+		"wsevent": "",
+		"function": "GetToken",
+		"group": "Twitch Auth Code - KEEP HIDDEN"
+	},
+	"btnDeleteSavedTokens": {
+		"type": "button",
+		"label": "Delete Saved Tokens",
+		"tooltip": "Clear out saved tokens so that a new Authorization Code can be used.",
+		"wsevent": "",
+		"function": "DeleteSavedTokens",
+		"group": "Twitch Auth Code - KEEP HIDDEN"
+	},
+	"btnRefreshTokens": {
+		"type": "button",
+		"label": "Refresh Saved Tokens",
+		"tooltip": "Manually trigger a refresh of access token using refresh token..",
+		"wsevent": "",
+		"function": "RefreshTokens",
+		"group": "Twitch Auth Code - KEEP HIDDEN"
+	},
+	"btnreadme": {
+		"type": "button",
+		"label": "open readme",
+		"tooltip": "read this!",
+		"wsevent": "",
+		"function": "openreadme",
+		"group": ""
+	},
+	"EnableDebug": {
+		"type": "checkbox",
+		"value": false,
+		"label": "Enable Debug",
+		"tooltip": "Enable or disable debug logs",
+		"group": "Debug Settings"
+	}
+}

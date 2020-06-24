@@ -1,0 +1,18 @@
+html, body {
+    height: 100%;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#time {
+    max-height: 100%;
+    max-width: 100%;
+    font-size: 200px;
+}
