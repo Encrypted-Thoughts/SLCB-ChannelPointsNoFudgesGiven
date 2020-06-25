@@ -13,6 +13,9 @@ $(document).ready(function () {
 
 });
 
+$("#header").fitText().fitText(1.2);;
+$("#time").fitText().fitText(0.5);;
+
 // Connect to ChatBot websocket
 // Automatically tries to reconnect on
 // disconnection by recalling this method
@@ -57,8 +60,11 @@ function connectWebsocket() {
             PlaySound(data.redeemedSFXPath, data.redeemedSFXVolume)
             if (timer > 0)
                 timer += data.seconds;
-            else
+            else {
+                $("body").css('visibility', 'visible');
+                $("body").addClass("animate__zoomIn");
                 StartTimer(data.seconds, $('#time'), data.finishedSFXPath, data.finishedSFXVolume);
+            }
         }
         else if (socketMessage.event === "EVENT_FUCKED_UP") {
             data = JSON.parse(socketMessage.data);
@@ -104,7 +110,8 @@ function connectWebsocket() {
                 timer--;
             else {
                 clearInterval(interval)
-                display.text("");
+                $("body").removeClass("animate__zoomIn")
+                $("body").addClass("animate__zoomOut")
                 PlaySound(path, volume)
             }
         }, 1000);
