@@ -32,6 +32,8 @@ The script also adds a custom custom command for resetting the timer.
 
 !fuckup {some value in seconds} - Adds the value in seconds to the timer. Value can be negative to remove time if necessary.
 
+![countdown](https://user-images.githubusercontent.com/50642352/85726419-add86100-b6bb-11ea-8384-acee0718a6ca.gif)
+
 ## Author
 
 EncryptedThoughts - [Twitch](https://www.twitch.tv/encryptedthoughts)
