@@ -61,7 +61,12 @@ function connectWebsocket() {
             if (timer > 0)
                 timer += data.seconds;
             else {
-                StartTimer(data.seconds, $('#time'), data.finishedSFXPath, data.finishedSFXVolume);
+                var minutes = parseInt(data.seconds / 60, 10);
+                var seconds = parseInt(data.seconds % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                $('#time').text(minutes + ":" + seconds);
+                StartTimer(data.seconds - 1, $('#time'), data.finishedSFXPath, data.finishedSFXVolume);
                 $("body").css('visibility', 'visible');
                 $("body").removeClass("animate__zoomOut");
                 $("body").addClass("animate__zoomIn");
