@@ -61,9 +61,10 @@ function connectWebsocket() {
             if (timer > 0)
                 timer += data.seconds;
             else {
-                $("body").css('visibility', 'visible');
-                $("body").addClass("animate__zoomIn");
                 StartTimer(data.seconds, $('#time'), data.finishedSFXPath, data.finishedSFXVolume);
+                $("body").css('visibility', 'visible');
+                $("body").removeClass("animate__zoomOut");
+                $("body").addClass("animate__zoomIn");
             }
         }
         else if (socketMessage.event === "EVENT_FUCKED_UP") {
@@ -109,6 +110,8 @@ function connectWebsocket() {
             if (timer > 0)
                 timer--;
             else {
+                timer = 0;
+                display.text("00:00");
                 clearInterval(interval)
                 $("body").removeClass("animate__zoomIn")
                 $("body").addClass("animate__zoomOut")
