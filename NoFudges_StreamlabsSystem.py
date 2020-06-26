@@ -109,7 +109,11 @@ def Execute(data):
                     type = "add"
                 payload = {
                     "interval": length,
-                    "type": type
+                    "type": type,
+                    "redeemedSFXPath": ScriptSettings.RedeemedSFXPath,
+                    "redeemedSFXVolume": ScriptSettings.RedeemedSFXVolume/100.0,
+                    "finishedSFXPath": ScriptSettings.FinishedSFXPath,
+                    "finishedSFXVolume": ScriptSettings.FinishedSFXVolume/100.0
                 }
                 Parent.BroadcastWsEvent("EVENT_FUCKED_UP",json.dumps(payload, encoding='utf-8-sig'))
 

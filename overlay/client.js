@@ -74,7 +74,19 @@ function connectWebsocket() {
         }
         else if (socketMessage.event === "EVENT_FUCKED_UP") {
             data = JSON.parse(socketMessage.data);
-            if (data.type === "reset")
+            if (timer <= 0) {
+                PlaySound(data.redeemedSFXPath, data.redeemedSFXVolume)
+                var minutes = parseInt(data.interval / 60, 10);
+                var seconds = parseInt(data.interval % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                $('#time').text(minutes + ":" + seconds);
+                StartTimer(data.interval - 1, $('#time'), data.finishedSFXPath, data.finishedSFXVolume);
+                $("body").css('visibility', 'visible');
+                $("body").removeClass("animate__zoomOut");
+                $("body").addClass("animate__zoomIn");
+            }
+            else if (data.type === "reset")
                 timer = timer - (timer % data.interval) + data.interval;
             else
                 timer += data.interval
