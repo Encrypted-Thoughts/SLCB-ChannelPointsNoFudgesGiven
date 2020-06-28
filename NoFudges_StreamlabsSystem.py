@@ -252,7 +252,6 @@ def EventReceiverRewardRedeemed(sender, e):
 
     if e.RewardTitle == ScriptSettings.TwitchRewardName:
         if (ScriptSettings.TwitchRewardActivationType == "Immediate" and "FULFILLED" in e.Status) or (ScriptSettings.TwitchRewardActivationType == r"On Reward Queue Accept/Reject" and "ACTION_TAKEN" in e.Status):
-            Parent.Log(ScriptName, "test")
             ThreadQueue.append(threading.Thread(target=RewardRedeemedWorker,args=(ScriptSettings.RedeemedSFXPath, ScriptSettings.RedeemedSFXVolume, ScriptSettings.RedeemedSFXDelay, ScriptSettings.FinishedSFXPath, ScriptSettings.FinishedSFXVolume, ScriptSettings.TimerLength,)))
 
     return
